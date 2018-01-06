@@ -28,10 +28,11 @@ SET "includeGL=%MINGW%\include\GL\"
 REM Create the non-existing GL folder
 MKDIR "%includeGL%"
 
-REM Copy any .dll to bin, any .lib to lib and any .h to include
-XCOPY *.dll "%binary%" /F /Y /I
-XCOPY *.lib "%library%" /F /Y /I
-XCOPY *.h "%includeGL%" /F /Y /I
+REM Copy glut.dll to bin, glut.lib and glut32.lib to lib and glut.h to include
+XCOPY glut.dll "%binary%" /F /Y /I
+XCOPY glut.lib "%library%" /F /Y /I
+XCOPY glut32.lib "%library%" /F /Y /I
+XCOPY glut.h "%includeGL%" /F /Y /I
 
 PAUSE
 
